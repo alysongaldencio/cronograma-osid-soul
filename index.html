@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cronograma de Testes - Apresentação</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         * {
             margin: 0;
@@ -323,6 +324,50 @@
 
         .sprint-results.hidden {
             display: none;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 500px;
+            width: 100%;
+            margin: 30px 0;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .chart-title {
+            text-align: center;
+            color: #4a5568;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .chart-legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+
+        .legend-text {
+            color: #4a5568;
+            font-size: 0.9rem;
         }
 
         @media (max-width: 768px) {
@@ -2214,17 +2259,69 @@
 
         </div>
 
+        <!-- Slide 8: Curva de Andamento -->
+        <div class="slide hidden" id="slide8">
+            <h2>📈 Curva de Andamento - Casos Executados por Sprint</h2>
+            
+            <div class="chart-container">
+                <div class="chart-title">Progresso Acumulado de Execução de Casos de Teste</div>
+                <canvas id="progressChart"></canvas>
+                
+                <div class="chart-legend">
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: linear-gradient(135deg, #667eea, #764ba2);"></div>
+                        <span class="legend-text">Estimativa Planejada</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: linear-gradient(135deg, #48bb78, #38a169);"></div>
+                        <span class="legend-text">Execução Real (N/A)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: linear-gradient(135deg, #f6ad55, #ed8936);"></div>
+                        <span class="legend-text">Meta de Progresso</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h4><br>📊 Análise da Curva de Andamento</h4>
+                <p><strong>Objetivo:</strong> Acompanhar o progresso real vs estimado ao longo dos 7 sprints</p>
+                <p><strong>Eixo X:</strong> Sprints (1 a 7)</p>
+                <p><strong>Eixo Y:</strong> Total de casos executados (acumulado)</p>
+                <p><strong>Meta:</strong> Atingir 6.602 casos ao final do Sprint 7</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">6.602</div>
+                    <div class="stat-label">Meta Total</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">943</div>
+                    <div class="stat-label">Meta por Sprint</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Executado Atual</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">0%</div>
+                    <div class="stat-label">Progresso Real</div>
+                </div>
+            </div>
+        </div>
+
         <!-- Navegação -->
         <div class="navigation">
             <button class="nav-button" onclick="previousSlide()">← Anterior</button>
-            <span id="slide-counter" style="margin: 0 20px; color: white; font-weight: bold;">1 / 7</span>
+            <span id="slide-counter" style="margin: 0 20px; color: white; font-weight: bold;">1 / 8</span>
             <button class="nav-button" onclick="nextSlide()">Próximo →</button>
         </div>
     </div>
 
     <script>
         let currentSlide = 1;
-        const totalSlides = 7;
+        const totalSlides = 8;
         let currentSprint = 1;
 
         function showSprintDetail(sprint) {
@@ -2272,6 +2369,13 @@
                 showSprintResults(1);
             }
             
+            // Initialize chart when entering slide 8
+            if (n === 8) {
+                setTimeout(() => {
+                    initializeChart();
+                }, 100);
+            }
+            
             // Update counter
             document.getElementById('slide-counter').textContent = `${n} / ${totalSlides}`;
         }
@@ -2301,6 +2405,125 @@
 
         // Initialize
         showSlide(1);
+
+        // Chart data for progress tracking
+        const chartData = {
+            labels: ['Sprint 1', 'Sprint 2', 'Sprint 3', 'Sprint 4', 'Sprint 5', 'Sprint 6', 'Sprint 7'],
+            datasets: [
+                {
+                    label: 'Estimativa Planejada (Acumulado)',
+                    data: [567, 1510, 2453, 3396, 4339, 5282, 6226],
+                    borderColor: 'rgb(102, 126, 234)',
+                    backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4
+                },
+                {
+                    label: 'Execução Real (N/A)',
+                    data: [0, 0, 0, 0, 0, 0, 0],
+                    borderColor: 'rgb(72, 187, 120)',
+                    backgroundColor: 'rgba(72, 187, 120, 0.1)',
+                    borderWidth: 3,
+                    fill: false,
+                    tension: 0.4,
+                    borderDash: [5, 5]
+                },
+                {
+                    label: 'Meta de Progresso (Linear)',
+                    data: [944, 1888, 2832, 3776, 4720, 5664, 6602],
+                    borderColor: 'rgb(246, 173, 85)',
+                    backgroundColor: 'rgba(246, 173, 85, 0.1)',
+                    borderWidth: 2,
+                    fill: false,
+                    tension: 0,
+                    borderDash: [10, 5]
+                }
+            ]
+        };
+
+        const chartConfig = {
+            type: 'line',
+            data: chartData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: false
+                    },
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        mode: 'index',
+                        intersect: false,
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                label += context.parsed.y.toLocaleString() + ' casos';
+                                return label;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        display: true,
+                        title: {
+                            display: true,
+                            text: 'Sprints',
+                            font: {
+                                size: 14,
+                                weight: 'bold'
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.1)'
+                        }
+                    },
+                    y: {
+                        display: true,
+                        title: {
+                            display: true,
+                            text: 'Casos Executados (Acumulado)',
+                            font: {
+                                size: 14,
+                                weight: 'bold'
+                            }
+                        },
+                        min: 0,
+                        max: 7000,
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.1)'
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return value.toLocaleString();
+                            }
+                        }
+                    }
+                },
+                interaction: {
+                    mode: 'nearest',
+                    axis: 'x',
+                    intersect: false
+                }
+            }
+        };
+
+        // Initialize chart when slide 8 is shown
+        let progressChart = null;
+        function initializeChart() {
+            const ctx = document.getElementById('progressChart').getContext('2d');
+            if (progressChart) {
+                progressChart.destroy();
+            }
+            progressChart = new Chart(ctx, chartConfig);
+        }
 
         // Auto-animate progress bars when they come into view
         const observerOptions = {
