@@ -311,6 +311,20 @@
             font-weight: 600;
         }
 
+        .na-value {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+        }
+
+        .sprint-results {
+            margin-top: 20px;
+        }
+
+        .sprint-results.hidden {
+            display: none;
+        }
+
         @media (max-width: 768px) {
             .slide {
                 padding: 20px;
@@ -1394,17 +1408,823 @@
             </div>
         </div>
 
+        <!-- Slide 7: Resultados por Sprint -->
+        <div class="slide hidden" id="slide7">
+            <h2>📊 Resultados por Sprint - Entregue vs Estimativa</h2>
+            
+            <div style="display: flex; justify-content: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
+                <button class="nav-button" onclick="showSprintResults(1)" id="results-sprint1-btn">Sprint 1</button>
+                <button class="nav-button" onclick="showSprintResults(2)" id="results-sprint2-btn">Sprint 2</button>
+                <button class="nav-button" onclick="showSprintResults(3)" id="results-sprint3-btn">Sprint 3</button>
+                <button class="nav-button" onclick="showSprintResults(4)" id="results-sprint4-btn">Sprint 4</button>
+                <button class="nav-button" onclick="showSprintResults(5)" id="results-sprint5-btn">Sprint 5</button>
+                <button class="nav-button" onclick="showSprintResults(6)" id="results-sprint6-btn">Sprint 6</button>
+                <button class="nav-button" onclick="showSprintResults(7)" id="results-sprint7-btn">Sprint 7</button>
+            </div>
+
+            <!-- Sprint 1 Results -->
+            <div id="results-sprint1" class="sprint-results">
+                <div class="highlight-box">
+                    <h4>📅 Sprint 1 (24/09 - 26/09) - Resultados</h4>
+                    <p><strong>Estimativa: 567 casos</strong> | <strong>Entregue: N/A</strong> | <strong>Status: N/A</strong></p>
+                </div>
+                
+                <div class="table-container">
+                    <table class="sprintly-table">
+                        <thead>
+                            <tr>
+                                <th>Módulo</th>
+                                <th>Estimativa</th>
+                                <th>Entregue</th>
+                                <th>Diferença</th>
+                                <th>Status</th>
+                                <th>% Concluído</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>FATURAMENTO</strong></td>
+                                <td>153</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>FINANÇAS E CONTROLADORIA</strong></td>
+                                <td>142</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ATENDIMENTO</strong></td>
+                                <td>113</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>MATERIAIS E LOGÍSTICA</strong></td>
+                                <td>86</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>DIAGNÓSTICO E TERAPIA</strong></td>
+                                <td>80</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>APOIO À TI</strong></td>
+                                <td>28</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>SERVIÇOS DE APOIO</strong></td>
+                                <td>19</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CLASSRISCO</strong></td>
+                                <td>18</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CLÍNICA E ASSISTENCIAL</strong></td>
+                                <td>12</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CONTROLE DE SALA</strong></td>
+                                <td>8</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>GESTÃO DE CONTRATOS</strong></td>
+                                <td>2</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Sprint 2 Results -->
+            <div id="results-sprint2" class="sprint-results hidden">
+                <div class="highlight-box">
+                    <h4>📅 Sprint 2 (29/09 - 03/10) - Resultados</h4>
+                    <p><strong>Estimativa: 943 casos</strong> | <strong>Entregue: N/A</strong> | <strong>Status: N/A</strong></p>
+                </div>
+                
+                <div class="table-container">
+                    <table class="sprintly-table">
+                        <thead>
+                            <tr>
+                                <th>Módulo</th>
+                                <th>Estimativa</th>
+                                <th>Entregue</th>
+                                <th>Diferença</th>
+                                <th>Status</th>
+                                <th>% Concluído</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>FATURAMENTO</strong></td>
+                                <td>255</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>FINANÇAS E CONTROLADORIA</strong></td>
+                                <td>237</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ATENDIMENTO</strong></td>
+                                <td>188</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>MATERIAIS E LOGÍSTICA</strong></td>
+                                <td>144</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>DIAGNÓSTICO E TERAPIA</strong></td>
+                                <td>133</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>APOIO À TI</strong></td>
+                                <td>47</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>SERVIÇOS DE APOIO</strong></td>
+                                <td>31</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CLASSRISCO</strong></td>
+                                <td>30</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CLÍNICA E ASSISTENCIAL</strong></td>
+                                <td>20</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CONTROLE DE SALA</strong></td>
+                                <td>13</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>GESTÃO DE CONTRATOS</strong></td>
+                                <td>4</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Sprint 3 Results -->
+            <div id="results-sprint3" class="sprint-results hidden">
+                <div class="highlight-box">
+                    <h4>📅 Sprint 3 (06/10 - 10/10) - Resultados</h4>
+                    <p><strong>Estimativa: 943 casos</strong> | <strong>Entregue: N/A</strong> | <strong>Status: N/A</strong></p>
+                </div>
+                
+                <div class="table-container">
+                    <table class="sprintly-table">
+                        <thead>
+                            <tr>
+                                <th>Módulo</th>
+                                <th>Estimativa</th>
+                                <th>Entregue</th>
+                                <th>Diferença</th>
+                                <th>Status</th>
+                                <th>% Concluído</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>FATURAMENTO</strong></td>
+                                <td>255</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>FINANÇAS E CONTROLADORIA</strong></td>
+                                <td>237</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ATENDIMENTO</strong></td>
+                                <td>188</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>MATERIAIS E LOGÍSTICA</strong></td>
+                                <td>144</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>DIAGNÓSTICO E TERAPIA</strong></td>
+                                <td>133</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>APOIO À TI</strong></td>
+                                <td>47</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>SERVIÇOS DE APOIO</strong></td>
+                                <td>31</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CLASSRISCO</strong></td>
+                                <td>30</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CLÍNICA E ASSISTENCIAL</strong></td>
+                                <td>20</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CONTROLE DE SALA</strong></td>
+                                <td>13</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>GESTÃO DE CONTRATOS</strong></td>
+                                <td>4</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Sprint 4 Results -->
+            <div id="results-sprint4" class="sprint-results hidden">
+                <div class="highlight-box">
+                    <h4>📅 Sprint 4 (13/10 - 17/10) - Resultados</h4>
+                    <p><strong>Estimativa: 943 casos</strong> | <strong>Entregue: N/A</strong> | <strong>Status: N/A</strong></p>
+                </div>
+                
+                <div class="table-container">
+                    <table class="sprintly-table">
+                        <thead>
+                            <tr>
+                                <th>Módulo</th>
+                                <th>Estimativa</th>
+                                <th>Entregue</th>
+                                <th>Diferença</th>
+                                <th>Status</th>
+                                <th>% Concluído</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>FATURAMENTO</strong></td>
+                                <td>255</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>FINANÇAS E CONTROLADORIA</strong></td>
+                                <td>237</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ATENDIMENTO</strong></td>
+                                <td>188</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>MATERIAIS E LOGÍSTICA</strong></td>
+                                <td>144</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>DIAGNÓSTICO E TERAPIA</strong></td>
+                                <td>133</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>APOIO À TI</strong></td>
+                                <td>47</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>SERVIÇOS DE APOIO</strong></td>
+                                <td>31</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CLASSRISCO</strong></td>
+                                <td>30</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CLÍNICA E ASSISTENCIAL</strong></td>
+                                <td>20</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CONTROLE DE SALA</strong></td>
+                                <td>13</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>GESTÃO DE CONTRATOS</strong></td>
+                                <td>4</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Sprint 5 Results -->
+            <div id="results-sprint5" class="sprint-results hidden">
+                <div class="highlight-box">
+                    <h4>📅 Sprint 5 (20/10 - 24/10) - Resultados</h4>
+                    <p><strong>Estimativa: 943 casos</strong> | <strong>Entregue: N/A</strong> | <strong>Status: N/A</strong></p>
+                </div>
+                
+                <div class="table-container">
+                    <table class="sprintly-table">
+                        <thead>
+                            <tr>
+                                <th>Módulo</th>
+                                <th>Estimativa</th>
+                                <th>Entregue</th>
+                                <th>Diferença</th>
+                                <th>Status</th>
+                                <th>% Concluído</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>FATURAMENTO</strong></td>
+                                <td>255</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>FINANÇAS E CONTROLADORIA</strong></td>
+                                <td>237</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ATENDIMENTO</strong></td>
+                                <td>188</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>MATERIAIS E LOGÍSTICA</strong></td>
+                                <td>144</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>DIAGNÓSTICO E TERAPIA</strong></td>
+                                <td>133</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>APOIO À TI</strong></td>
+                                <td>47</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>SERVIÇOS DE APOIO</strong></td>
+                                <td>31</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CLASSRISCO</strong></td>
+                                <td>30</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CLÍNICA E ASSISTENCIAL</strong></td>
+                                <td>20</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CONTROLE DE SALA</strong></td>
+                                <td>13</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>GESTÃO DE CONTRATOS</strong></td>
+                                <td>4</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Sprint 6 Results -->
+            <div id="results-sprint6" class="sprint-results hidden">
+                <div class="highlight-box">
+                    <h4>📅 Sprint 6 (27/10 - 31/10) - Resultados</h4>
+                    <p><strong>Estimativa: 943 casos</strong> | <strong>Entregue: N/A</strong> | <strong>Status: N/A</strong></p>
+                </div>
+                
+                <div class="table-container">
+                    <table class="sprintly-table">
+                        <thead>
+                            <tr>
+                                <th>Módulo</th>
+                                <th>Estimativa</th>
+                                <th>Entregue</th>
+                                <th>Diferença</th>
+                                <th>Status</th>
+                                <th>% Concluído</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>FATURAMENTO</strong></td>
+                                <td>255</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>FINANÇAS E CONTROLADORIA</strong></td>
+                                <td>237</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ATENDIMENTO</strong></td>
+                                <td>188</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>MATERIAIS E LOGÍSTICA</strong></td>
+                                <td>144</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>DIAGNÓSTICO E TERAPIA</strong></td>
+                                <td>133</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>APOIO À TI</strong></td>
+                                <td>47</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>SERVIÇOS DE APOIO</strong></td>
+                                <td>31</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CLASSRISCO</strong></td>
+                                <td>30</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CLÍNICA E ASSISTENCIAL</strong></td>
+                                <td>20</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CONTROLE DE SALA</strong></td>
+                                <td>13</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>GESTÃO DE CONTRATOS</strong></td>
+                                <td>4</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Sprint 7 Results -->
+            <div id="results-sprint7" class="sprint-results hidden">
+                <div class="highlight-box">
+                    <h4>📅 Sprint 7 (03/11 - 07/11) - Resultados</h4>
+                    <p><strong>Estimativa: 944 casos</strong> | <strong>Entregue: N/A</strong> | <strong>Status: N/A</strong></p>
+                </div>
+                
+                <div class="table-container">
+                    <table class="sprintly-table">
+                        <thead>
+                            <tr>
+                                <th>Módulo</th>
+                                <th>Estimativa</th>
+                                <th>Entregue</th>
+                                <th>Diferença</th>
+                                <th>Status</th>
+                                <th>% Concluído</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>FATURAMENTO</strong></td>
+                                <td>256</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>FINANÇAS E CONTROLADORIA</strong></td>
+                                <td>234</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ATENDIMENTO</strong></td>
+                                <td>190</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>MATERIAIS E LOGÍSTICA</strong></td>
+                                <td>144</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>DIAGNÓSTICO E TERAPIA</strong></td>
+                                <td>132</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>APOIO À TI</strong></td>
+                                <td>46</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>SERVIÇOS DE APOIO</strong></td>
+                                <td>28</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CLASSRISCO</strong></td>
+                                <td>28</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CLÍNICA E ASSISTENCIAL</strong></td>
+                                <td>18</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CONTROLE DE SALA</strong></td>
+                                <td>13</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>GESTÃO DE CONTRATOS</strong></td>
+                                <td>3</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                                <td class="na-value">N/A</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
         <!-- Navegação -->
         <div class="navigation">
             <button class="nav-button" onclick="previousSlide()">← Anterior</button>
-            <span id="slide-counter" style="margin: 0 20px; color: white; font-weight: bold;">1 / 6</span>
+            <span id="slide-counter" style="margin: 0 20px; color: white; font-weight: bold;">1 / 7</span>
             <button class="nav-button" onclick="nextSlide()">Próximo →</button>
         </div>
     </div>
 
     <script>
         let currentSlide = 1;
-        const totalSlides = 6;
+        const totalSlides = 7;
         let currentSprint = 1;
 
         function showSprintDetail(sprint) {
@@ -1420,6 +2240,18 @@
             currentSprint = sprint;
         }
 
+        function showSprintResults(sprint) {
+            // Hide all sprint results
+            for (let i = 1; i <= 7; i++) {
+                document.getElementById(`results-sprint${i}`).classList.add('hidden');
+                document.getElementById(`results-sprint${i}-btn`).style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
+            }
+            
+            // Show selected sprint results
+            document.getElementById(`results-sprint${sprint}`).classList.remove('hidden');
+            document.getElementById(`results-sprint${sprint}-btn`).style.background = 'linear-gradient(135deg, #48bb78, #38a169)';
+        }
+
         function showSlide(n) {
             // Hide all slides
             for (let i = 1; i <= totalSlides; i++) {
@@ -1433,6 +2265,11 @@
             // Show first sprint detail when entering slide 5
             if (n === 5) {
                 showSprintDetail(1);
+            }
+            
+            // Show first sprint results when entering slide 7
+            if (n === 7) {
+                showSprintResults(1);
             }
             
             // Update counter
