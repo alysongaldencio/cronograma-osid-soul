@@ -2519,19 +2519,19 @@
                 <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 15px;">
                     <div style="display: flex; align-items: center; gap: 8px;">
                         <div style="width: 20px; height: 20px; background: #c6f6d5; border-radius: 50%;"></div>
-                        <span style="color: #4a5568; font-size: 0.9rem;">Excelente (81-100%)</span>
+                        <span style="color: #4a5568; font-size: 0.9rem;">Concluído (100%)</span>
                     </div>
                     <div style="display: flex; align-items: center; gap: 8px;">
                         <div style="width: 20px; height: 20px; background: #fef5e7; border-radius: 50%;"></div>
-                        <span style="color: #4a5568; font-size: 0.9rem;">Bom (61-80%)</span>
+                        <span style="color: #4a5568; font-size: 0.9rem;">Em fase de conclusão (90-99%)</span>
                     </div>
                     <div style="display: flex; align-items: center; gap: 8px;">
                         <div style="width: 20px; height: 20px; background: #fed7d7; border-radius: 50%;"></div>
-                        <span style="color: #4a5568; font-size: 0.9rem;">Atenção (31-60%)</span>
+                        <span style="color: #4a5568; font-size: 0.9rem;">Em andamento (1-89%)</span>
                     </div>
                     <div style="display: flex; align-items: center; gap: 8px;">
                         <div style="width: 20px; height: 20px; background: #fed7d7; border-radius: 50%;"></div>
-                        <span style="color: #4a5568; font-size: 0.9rem;">Crítico (0-30%)</span>
+                        <span style="color: #4a5568; font-size: 0.9rem;">Não iniciado (0%)</span>
                     </div>
                 </div>
             </div>
@@ -2829,18 +2829,18 @@
             const statusEl = document.getElementById(`status-${module}`);
             if (statusEl) {
                 statusEl.className = 'gauge-status';
-                if (percentage >= 81) {
+                if (percentage === 100) {
                     statusEl.classList.add('status-excellent');
-                    statusEl.textContent = 'Excelente';
-                } else if (percentage >= 61) {
+                    statusEl.textContent = 'Concluído';
+                } else if (percentage >= 90) {
                     statusEl.classList.add('status-good');
-                    statusEl.textContent = 'Bom';
-                } else if (percentage >= 31) {
+                    statusEl.textContent = 'Em fase de conclusão';
+                } else if (percentage > 0) {
                     statusEl.classList.add('status-warning');
-                    statusEl.textContent = 'Atenção';
+                    statusEl.textContent = 'Em andamento';
                 } else {
                     statusEl.classList.add('status-critical');
-                    statusEl.textContent = percentage === 0 ? 'Não iniciado' : 'Crítico';
+                    statusEl.textContent = 'Não iniciado';
                 }
             }
             
