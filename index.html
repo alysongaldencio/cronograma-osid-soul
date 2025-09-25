@@ -370,6 +370,86 @@
             font-size: 0.9rem;
         }
 
+        .gauge-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .gauge-item {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gauge-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gauge-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin-bottom: 15px;
+        }
+
+        .gauge-chart {
+            position: relative;
+            width: 120px;
+            height: 60px;
+            margin: 0 auto 10px;
+        }
+
+        .gauge-percentage {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+
+        .gauge-details {
+            font-size: 0.8rem;
+            color: #718096;
+            margin-top: 5px;
+        }
+
+        .gauge-status {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        .status-excellent { background: #c6f6d5; color: #22543d; }
+        .status-good { background: #fef5e7; color: #744210; }
+        .status-warning { background: #fed7d7; color: #742a2a; }
+        .status-critical { background: #fed7d7; color: #742a2a; }
+
+        @media (max-width: 768px) {
+            .gauge-container {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 15px;
+            }
+            
+            .gauge-chart {
+                width: 100px;
+                height: 50px;
+            }
+            
+            .gauge-percentage {
+                font-size: 1rem;
+            }
+        }
+
         @media (max-width: 768px) {
             .slide {
                 padding: 20px;
@@ -2307,17 +2387,167 @@
             </div>
         </div>
 
+        <!-- Slide 9: Progresso por Módulo -->
+        <div class="slide hidden" id="slide9">
+            <h2>🎯 Progresso por Módulo</h2>
+            
+            <div class="gauge-container">
+                <!-- FATURAMENTO -->
+                <div class="gauge-item">
+                    <div class="gauge-title">FATURAMENTO</div>
+                    <div class="gauge-chart">
+                        <canvas id="gauge-faturamento"></canvas>
+                        <div class="gauge-percentage" id="percentage-faturamento">0%</div>
+                    </div>
+                    <div class="gauge-details" id="details-faturamento">0 / 1.531 casos</div>
+                    <div class="gauge-status status-critical" id="status-faturamento">Não iniciado</div>
+                </div>
+
+                <!-- FINANÇAS E CONTROLADORIA -->
+                <div class="gauge-item">
+                    <div class="gauge-title">FINANÇAS E CONTROLADORIA</div>
+                    <div class="gauge-chart">
+                        <canvas id="gauge-financas"></canvas>
+                        <div class="gauge-percentage" id="percentage-financas">0%</div>
+                    </div>
+                    <div class="gauge-details" id="details-financas">0 / 1.419 casos</div>
+                    <div class="gauge-status status-critical" id="status-financas">Não iniciado</div>
+                </div>
+
+                <!-- ATENDIMENTO -->
+                <div class="gauge-item">
+                    <div class="gauge-title">ATENDIMENTO</div>
+                    <div class="gauge-chart">
+                        <canvas id="gauge-atendimento"></canvas>
+                        <div class="gauge-percentage" id="percentage-atendimento">0%</div>
+                    </div>
+                    <div class="gauge-details" id="details-atendimento">0 / 1.130 casos</div>
+                    <div class="gauge-status status-critical" id="status-atendimento">Não iniciado</div>
+                </div>
+
+                <!-- MATERIAIS E LOGÍSTICA -->
+                <div class="gauge-item">
+                    <div class="gauge-title">MATERIAIS E LOGÍSTICA</div>
+                    <div class="gauge-chart">
+                        <canvas id="gauge-materiais"></canvas>
+                        <div class="gauge-percentage" id="percentage-materiais">0%</div>
+                    </div>
+                    <div class="gauge-details" id="details-materiais">0 / 864 casos</div>
+                    <div class="gauge-status status-critical" id="status-materiais">Não iniciado</div>
+                </div>
+
+                <!-- DIAGNÓSTICO E TERAPIA -->
+                <div class="gauge-item">
+                    <div class="gauge-title">DIAGNÓSTICO E TERAPIA</div>
+                    <div class="gauge-chart">
+                        <canvas id="gauge-diagnostico"></canvas>
+                        <div class="gauge-percentage" id="percentage-diagnostico">0%</div>
+                    </div>
+                    <div class="gauge-details" id="details-diagnostico">0 / 797 casos</div>
+                    <div class="gauge-status status-critical" id="status-diagnostico">Não iniciado</div>
+                </div>
+
+                <!-- APOIO À TI -->
+                <div class="gauge-item">
+                    <div class="gauge-title">APOIO À TI</div>
+                    <div class="gauge-chart">
+                        <canvas id="gauge-ti"></canvas>
+                        <div class="gauge-percentage" id="percentage-ti">0%</div>
+                    </div>
+                    <div class="gauge-details" id="details-ti">0 / 281 casos</div>
+                    <div class="gauge-status status-critical" id="status-ti">Não iniciado</div>
+                </div>
+
+                <!-- SERVIÇOS DE APOIO -->
+                <div class="gauge-item">
+                    <div class="gauge-title">SERVIÇOS DE APOIO</div>
+                    <div class="gauge-chart">
+                        <canvas id="gauge-servicos"></canvas>
+                        <div class="gauge-percentage" id="percentage-servicos">0%</div>
+                    </div>
+                    <div class="gauge-details" id="details-servicos">0 / 183 casos</div>
+                    <div class="gauge-status status-critical" id="status-servicos">Não iniciado</div>
+                </div>
+
+                <!-- CLASSRISCO -->
+                <div class="gauge-item">
+                    <div class="gauge-title">CLASSRISCO</div>
+                    <div class="gauge-chart">
+                        <canvas id="gauge-classrisco"></canvas>
+                        <div class="gauge-percentage" id="percentage-classrisco">0%</div>
+                    </div>
+                    <div class="gauge-details" id="details-classrisco">0 / 178 casos</div>
+                    <div class="gauge-status status-critical" id="status-classrisco">Não iniciado</div>
+                </div>
+
+                <!-- CLÍNICA E ASSISTENCIAL -->
+                <div class="gauge-item">
+                    <div class="gauge-title">CLÍNICA E ASSISTENCIAL</div>
+                    <div class="gauge-chart">
+                        <canvas id="gauge-clinica"></canvas>
+                        <div class="gauge-percentage" id="percentage-clinica">0%</div>
+                    </div>
+                    <div class="gauge-details" id="details-clinica">0 / 118 casos</div>
+                    <div class="gauge-status status-critical" id="status-clinica">Não iniciado</div>
+                </div>
+
+                <!-- CONTROLE DE SALA -->
+                <div class="gauge-item">
+                    <div class="gauge-title">CONTROLE DE SALA</div>
+                    <div class="gauge-chart">
+                        <canvas id="gauge-sala"></canvas>
+                        <div class="gauge-percentage" id="percentage-sala">0%</div>
+                    </div>
+                    <div class="gauge-details" id="details-sala">0 / 78 casos</div>
+                    <div class="gauge-status status-critical" id="status-sala">Não iniciado</div>
+                </div>
+
+                <!-- GESTÃO DE CONTRATOS -->
+                <div class="gauge-item">
+                    <div class="gauge-title">GESTÃO DE CONTRATOS</div>
+                    <div class="gauge-chart">
+                        <canvas id="gauge-contratos"></canvas>
+                        <div class="gauge-percentage" id="percentage-contratos">0%</div>
+                    </div>
+                    <div class="gauge-details" id="details-contratos">0 / 23 casos</div>
+                    <div class="gauge-status status-critical" id="status-contratos">Não iniciado</div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h4>📊 Legenda </h4>
+                <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 15px;">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <div style="width: 20px; height: 20px; background: #c6f6d5; border-radius: 50%;"></div>
+                        <span style="color: #4a5568; font-size: 0.9rem;">Excelente (81-100%)</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <div style="width: 20px; height: 20px; background: #fef5e7; border-radius: 50%;"></div>
+                        <span style="color: #4a5568; font-size: 0.9rem;">Bom (61-80%)</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <div style="width: 20px; height: 20px; background: #fed7d7; border-radius: 50%;"></div>
+                        <span style="color: #4a5568; font-size: 0.9rem;">Atenção (31-60%)</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <div style="width: 20px; height: 20px; background: #fed7d7; border-radius: 50%;"></div>
+                        <span style="color: #4a5568; font-size: 0.9rem;">Crítico (0-30%)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Navegação -->
         <div class="navigation">
             <button class="nav-button" onclick="previousSlide()">← Anterior</button>
-            <span id="slide-counter" style="margin: 0 20px; color: white; font-weight: bold;">1 / 8</span>
+            <span id="slide-counter" style="margin: 0 20px; color: white; font-weight: bold;">1 / 9</span>
             <button class="nav-button" onclick="nextSlide()">Próximo →</button>
         </div>
     </div>
 
     <script>
         let currentSlide = 1;
-        const totalSlides = 8;
+        const totalSlides = 9;
         let currentSprint = 1;
 
         function showSprintDetail(sprint) {
@@ -2369,6 +2599,14 @@
             if (n === 8) {
                 setTimeout(() => {
                     initializeChart();
+                }, 100);
+            }
+            
+            // Initialize gauges when entering slide 9
+            if (n === 9) {
+                setTimeout(() => {
+                    setCanvasSize();
+                    initializeGauges();
                 }, 100);
             }
             
@@ -2509,6 +2747,122 @@
                 progressChart.destroy();
             }
             progressChart = new Chart(ctx, chartConfig);
+        }
+
+        // Gauge data for each module
+        const gaugeData = {
+            'faturamento': { total: 1531, executed: 0 },
+            'financas': { total: 1419, executed: 0 },
+            'atendimento': { total: 1130, executed: 0 },
+            'materiais': { total: 864, executed: 0 },
+            'diagnostico': { total: 797, executed: 0 },
+            'ti': { total: 281, executed: 0 },
+            'servicos': { total: 183, executed: 0 },
+            'classrisco': { total: 178, executed: 0 },
+            'clinica': { total: 118, executed: 0 },
+            'sala': { total: 78, executed: 0 },
+            'contratos': { total: 23, executed: 0 }
+        };
+
+        // Function to create semicircular gauge
+        function createGauge(canvasId, percentage) {
+            const canvas = document.getElementById(canvasId);
+            if (!canvas) return;
+            
+            const ctx = canvas.getContext('2d');
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height;
+            const radius = Math.min(centerX, centerY) - 10;
+            
+            // Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw background arc
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, radius, Math.PI, 2 * Math.PI);
+            ctx.lineWidth = 15;
+            ctx.strokeStyle = '#e2e8f0';
+            ctx.stroke();
+            
+            // Draw progress arc
+            const progressAngle = Math.PI + (percentage / 100) * Math.PI;
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, radius, Math.PI, progressAngle);
+            ctx.lineWidth = 15;
+            ctx.lineCap = 'round';
+            
+            // Color based on percentage
+            if (percentage >= 81) {
+                ctx.strokeStyle = '#48bb78'; // Green
+            } else if (percentage >= 61) {
+                ctx.strokeStyle = '#f6ad55'; // Yellow
+            } else if (percentage >= 31) {
+                ctx.strokeStyle = '#ed8936'; // Orange
+            } else {
+                ctx.strokeStyle = '#e53e3e'; // Red
+            }
+            
+            ctx.stroke();
+        }
+
+        // Function to update gauge data
+        function updateGauge(module, executed) {
+            const data = gaugeData[module];
+            if (!data) return;
+            
+            data.executed = executed;
+            const percentage = Math.round((executed / data.total) * 100);
+            
+            // Update percentage display
+            const percentageEl = document.getElementById(`percentage-${module}`);
+            if (percentageEl) {
+                percentageEl.textContent = `${percentage}%`;
+            }
+            
+            // Update details
+            const detailsEl = document.getElementById(`details-${module}`);
+            if (detailsEl) {
+                detailsEl.textContent = `${executed.toLocaleString()} / ${data.total.toLocaleString()} casos`;
+            }
+            
+            // Update status
+            const statusEl = document.getElementById(`status-${module}`);
+            if (statusEl) {
+                statusEl.className = 'gauge-status';
+                if (percentage >= 81) {
+                    statusEl.classList.add('status-excellent');
+                    statusEl.textContent = 'Excelente';
+                } else if (percentage >= 61) {
+                    statusEl.classList.add('status-good');
+                    statusEl.textContent = 'Bom';
+                } else if (percentage >= 31) {
+                    statusEl.classList.add('status-warning');
+                    statusEl.textContent = 'Atenção';
+                } else {
+                    statusEl.classList.add('status-critical');
+                    statusEl.textContent = percentage === 0 ? 'Não iniciado' : 'Crítico';
+                }
+            }
+            
+            // Update gauge chart
+            createGauge(`gauge-${module}`, percentage);
+        }
+
+        // Function to initialize all gauges
+        function initializeGauges() {
+            Object.keys(gaugeData).forEach(module => {
+                const data = gaugeData[module];
+                updateGauge(module, data.executed);
+            });
+        }
+
+        // Function to set canvas size
+        function setCanvasSize() {
+            const canvases = document.querySelectorAll('.gauge-chart canvas');
+            canvases.forEach(canvas => {
+                canvas.width = 120;
+                canvas.height = 60;
+            });
         }
 
         // Auto-animate progress bars when they come into view
