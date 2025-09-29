@@ -2354,7 +2354,7 @@
                     </div>
                     <div class="legend-item">
                         <div class="legend-color" style="background: linear-gradient(135deg, #48bb78, #38a169);"></div>
-                        <span class="legend-text">Execução Real (N/A)</span>
+                        <span class="legend-text">Execução Real</span>
                     </div>
                 </div>
             </div>
@@ -2377,11 +2377,11 @@
                     <div class="stat-label">Meta por Sprint</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">0</div>
+                    <div class="stat-number">274</div>
                     <div class="stat-label">Executado Atual</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">0%</div>
+                    <div class="stat-number">4,1%</div>
                     <div class="stat-label">Progresso Real</div>
                 </div>
             </div>
@@ -2408,10 +2408,10 @@
                     <div class="gauge-title">FINANÇAS E CONTROLADORIA</div>
                     <div class="gauge-chart">
                         <canvas id="gauge-financas"></canvas>
-                        <div class="gauge-percentage" id="percentage-financas">0%</div>
+                        <div class="gauge-percentage" id="percentage-financas">8,5%</div>
                     </div>
-                    <div class="gauge-details" id="details-financas">0 / 1.419 casos</div>
-                    <div class="gauge-status status-critical" id="status-financas">Não iniciado</div>
+                    <div class="gauge-details" id="details-financas">121 / 1.419 casos</div>
+                    <div class="gauge-status status-warning" id="status-financas">Em andamento</div>
                 </div>
 
                 <!-- ATENDIMENTO -->
@@ -2419,10 +2419,10 @@
                     <div class="gauge-title">ATENDIMENTO</div>
                     <div class="gauge-chart">
                         <canvas id="gauge-atendimento"></canvas>
-                        <div class="gauge-percentage" id="percentage-atendimento">0%</div>
+                        <div class="gauge-percentage" id="percentage-atendimento">6,7%</div>
                     </div>
-                    <div class="gauge-details" id="details-atendimento">0 / 1.130 casos</div>
-                    <div class="gauge-status status-critical" id="status-atendimento">Não iniciado</div>
+                    <div class="gauge-details" id="details-atendimento">76 / 1.130 casos</div>
+                    <div class="gauge-status status-warning" id="status-atendimento">Em andamento</div>
                 </div>
 
                 <!-- MATERIAIS E LOGÍSTICA -->
@@ -2430,10 +2430,10 @@
                     <div class="gauge-title">MATERIAIS E LOGÍSTICA</div>
                     <div class="gauge-chart">
                         <canvas id="gauge-materiais"></canvas>
-                        <div class="gauge-percentage" id="percentage-materiais">0%</div>
+                        <div class="gauge-percentage" id="percentage-materiais">6,7%</div>
                     </div>
-                    <div class="gauge-details" id="details-materiais">0 / 864 casos</div>
-                    <div class="gauge-status status-critical" id="status-materiais">Não iniciado</div>
+                    <div class="gauge-details" id="details-materiais">58 / 864 casos</div>
+                    <div class="gauge-status status-warning" id="status-materiais">Em andamento</div>
                 </div>
 
                 <!-- DIAGNÓSTICO E TERAPIA -->
@@ -2485,10 +2485,10 @@
                     <div class="gauge-title">CLÍNICA E ASSISTENCIAL</div>
                     <div class="gauge-chart">
                         <canvas id="gauge-clinica"></canvas>
-                        <div class="gauge-percentage" id="percentage-clinica">0%</div>
+                        <div class="gauge-percentage" id="percentage-clinica">16,1%</div>
                     </div>
-                    <div class="gauge-details" id="details-clinica">0 / 118 casos</div>
-                    <div class="gauge-status status-critical" id="status-clinica">Não iniciado</div>
+                    <div class="gauge-details" id="details-clinica">19 / 118 casos</div>
+                    <div class="gauge-status status-excellent" id="status-clinica">Concluído</div>
                 </div>
 
                 <!-- CONTROLE DE SALA -->
@@ -2654,14 +2654,13 @@
                     tension: 0.4
                 },
                 {
-                    label: 'Execução Real (N/A)',
-                    data: [0, 0, 0, 0, 0, 0, 0],
+                    label: 'Execução Real',
+                    data: [274, 0, 0, 0, 0, 0, 0],
                     borderColor: 'rgb(72, 187, 120)',
                     backgroundColor: 'rgba(72, 187, 120, 0.1)',
                     borderWidth: 3,
                     fill: false,
-                    tension: 0.4,
-                    borderDash: [5, 5]
+                    tension: 0.4
                 },
             ]
         };
@@ -2752,14 +2751,14 @@
         // Gauge data for each module
         const gaugeData = {
             'faturamento': { total: 1531, executed: 0 },
-            'financas': { total: 1419, executed: 0 },
-            'atendimento': { total: 1130, executed: 0 },
-            'materiais': { total: 864, executed: 0 },
+            'financas': { total: 1419, executed: 121 },
+            'atendimento': { total: 1130, executed: 76 },
+            'materiais': { total: 864, executed: 58 },
             'diagnostico': { total: 797, executed: 0 },
             'ti': { total: 281, executed: 0 },
             'servicos': { total: 183, executed: 0 },
             'classrisco': { total: 178, executed: 0 },
-            'clinica': { total: 118, executed: 0 },
+            'clinica': { total: 118, executed: 19 },
             'sala': { total: 78, executed: 0 },
             'contratos': { total: 23, executed: 0 }
         };
