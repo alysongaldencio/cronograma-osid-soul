@@ -1693,7 +1693,7 @@
             <div id="results-sprint2" class="sprint-results hidden">
                 <div class="highlight-box">
                     <h4>📅 Sprint 2 (29/09 - 03/10) - Resultados</h4>
-                    <p><strong>Estimativa: 943 casos</strong> | <strong>Entregue: 304 casos</strong> | <strong>Status: 32,2%</strong></p>
+                    <p><strong>Estimativa: 943 casos</strong> | <strong>Entregue: 426 casos</strong> | <strong>Status: 45,2%</strong></p>
                 </div>
                 
                 <div class="table-container">
@@ -1728,10 +1728,10 @@
                             <tr>
                                 <td><strong>ATENDIMENTO</strong></td>
                                 <td>188</td>
-                                <td>39</td>
-                                <td>-149</td>
+                                <td>161</td>
+                                <td>-27</td>
                                 <td class="status-warning">Entregue parcialmente</td>
-                                <td>20,7%</td>
+                                <td>85,6%</td>
                             </tr>
                             <tr>
                                 <td><strong>MATERIAIS E LOGÍSTICA</strong></td>
@@ -2407,11 +2407,11 @@
                     <div class="stat-label">Meta por Sprint</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">324</div>
+                    <div class="stat-number">750</div>
                     <div class="stat-label">Executado Atual</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">4,9%</div>
+                    <div class="stat-number">11,4%</div>
                     <div class="stat-label">Progresso Real</div>
                 </div>
             </div>
@@ -2449,9 +2449,9 @@
                     <div class="gauge-title">ATENDIMENTO</div>
                     <div class="gauge-chart">
                         <canvas id="gauge-atendimento"></canvas>
-                        <div class="gauge-percentage" id="percentage-atendimento">7,4%</div>
+                        <div class="gauge-percentage" id="percentage-atendimento">21,7%</div>
                     </div>
-                    <div class="gauge-details" id="details-atendimento">84 / 1.130 casos</div>
+                    <div class="gauge-details" id="details-atendimento">245 / 1.130 casos</div>
                     <div class="gauge-status status-warning" id="status-atendimento">Em andamento</div>
                 </div>
 
@@ -2724,7 +2724,7 @@
             <div id="analysis-sprint2" class="sprint-analysis hidden">
                 <div class="highlight-box">
                     <h4>📅 Sprint 2 (29/09 - 03/10) - Análise de Performance</h4>
-                    <p><strong>Estimativa:</strong> 943 casos | <strong>Entregue:</strong> 304 casos | <strong>Déficit:</strong> 639 casos (67,8%)</p>
+                    <p><strong>Estimativa:</strong> 943 casos | <strong>Entregue:</strong> 426 casos | <strong>Déficit:</strong> 517 casos (54,8%)</p>
                 </div>
                 
                 <div style="display: flex; justify-content: center; margin: 20px 0; flex-wrap: wrap; gap: 10px;">
@@ -2744,15 +2744,15 @@
                             <div class="stat-label">Estimativa</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-number">304</div>
+                            <div class="stat-number">426</div>
                             <div class="stat-label">Entregue</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-number">639</div>
+                            <div class="stat-number">517</div>
                             <div class="stat-label">Déficit</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-number">67,8%</div>
+                            <div class="stat-number">54,8%</div>
                             <div class="stat-label">% Déficit</div>
                         </div>
                     </div>
@@ -2793,9 +2793,9 @@
                                 <tr>
                                     <td><strong>ATENDIMENTO</strong></td>
                                     <td>188</td>
-                                    <td>39</td>
-                                    <td>-149</td>
-                                    <td>-79,3%</td>
+                                    <td>161</td>
+                                    <td>-27</td>
+                                    <td>-14,4%</td>
                                 </tr>
                                 <tr>
                                     <td><strong>MATERIAIS E LOGÍSTICA</strong></td>
@@ -2940,15 +2940,15 @@
                     <div class="progress-bar">
                         <div class="progress-fill" style="width: 22.9%">22.9%</div>
                     </div>
-                    <div style="margin-top: 5px; font-size: 0.9rem; color: #4a5568;">
-                        <strong>Realizado:</strong> 628 casos - 9,5% acumulado
-                    </div>
-                    <div class="progress-bar" style="margin-top: 5px;">
-                        <div class="progress-fill-realized" style="width: 9.5%">9.5%</div>
-                    </div>
-                    <div style="margin-top: 5px; font-size: 0.8rem; color: #718096;">
-                        <strong>Sprint 2:</strong> 304 casos - 32,2% da sprint
-                    </div>
+            <div style="margin-top: 5px; font-size: 0.9rem; color: #4a5568;">
+                <strong>Realizado:</strong> 750 casos - 11,4% acumulado
+            </div>
+            <div class="progress-bar" style="margin-top: 5px;">
+                <div class="progress-fill-realized" style="width: 11.4%">11.4%</div>
+            </div>
+            <div style="margin-top: 5px; font-size: 0.8rem; color: #718096;">
+                <strong>Sprint 2:</strong> 426 casos - 45,2% da sprint
+            </div>
                 </div>
                 
                 <div class="timeline-item">
@@ -3148,7 +3148,7 @@
                 },
                 {
                     label: 'Execução Real',
-                    data: [324, 628, 0, 0, 0, 0, 0],
+                    data: [324, 750, 0, 0, 0, 0, 0], // Updated: 324 (Sprint 1) + 426 (Sprint 2) = 750
                     borderColor: 'rgb(72, 187, 120)',
                     backgroundColor: 'rgba(72, 187, 120, 0.1)',
                     borderWidth: 3,
@@ -3245,7 +3245,7 @@
         const gaugeData = {
             'faturamento': { total: 1531, executed: 25 },
             'financas': { total: 1419, executed: 267 },
-            'atendimento': { total: 1130, executed: 123 },
+            'atendimento': { total: 1130, executed: 245 },
             'materiais': { total: 864, executed: 177 },
             'diagnostico': { total: 797, executed: 0 },
             'ti': { total: 281, executed: 2 },
@@ -3647,7 +3647,7 @@
         // Sprint 2 Analysis Functions
         function updateSprint2Stats() {
             const estimativa = 943;
-            const entregue = 304;
+            const entregue = 426;
             const deficit = estimativa - entregue;
             const superavit = entregue > estimativa ? entregue - estimativa : 0;
             
@@ -3708,7 +3708,7 @@
             
             // Dados da Sprint 2
             const estimativa = 943;
-            const entregue = 304;
+            const entregue = 426;
             const deficit = estimativa - entregue;
             const superavit = entregue > estimativa ? entregue - estimativa : 0;
             
@@ -3801,7 +3801,7 @@
             ];
             
             const estimativaData = [255, 237, 188, 144, 133, 47, 31, 30, 20, 13, 4];
-            const entregueData = [19, 133, 39, 97, 0, 2, 0, 0, 14, 0, 0];
+            const entregueData = [19, 133, 161, 97, 0, 2, 0, 0, 14, 0, 0];
             const diferencaData = estimativaData.map((est, i) => entregueData[i] - est);
             const percentualDiferencaData = estimativaData.map((est, i) => ((entregueData[i] - est) / est * 100).toFixed(1));
 
